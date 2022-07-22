@@ -6,7 +6,7 @@ export default function Blogs() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const onSubmit = () => {
-    axios.post("http://localhost:3001/posts", {
+    axios.post("http://localhost:3000/posts", {
       title,
       body,
     });
@@ -16,7 +16,6 @@ export default function Blogs() {
     <div>
       <Link to="/">Home</Link>
       <Link to="/blogs">Blogs</Link>
-
       <>
         <div className="container">
           <div className="mb-3">
@@ -37,7 +36,7 @@ export default function Blogs() {
               onChange={(event) => {
                 setBody(event.target.value);
               }}
-              rows="20"
+              rows=""
             />
           </div>
           <button className="btn btn-primary" onClick={onSubmit}>
